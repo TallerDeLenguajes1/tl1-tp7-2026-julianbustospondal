@@ -5,8 +5,8 @@ c. Fecha de nacimiento (datetime),
 d. Estado civil (char),
 e. Fecha de ingreso en la empresa (datetime),  
 f. Sueldo Básico (double),  
-g. Cargo (cargos)  
-Nota: Cargo es una variable de tipo “cargos” que es enumeración (enum) 
+g. Cargo (Cargos)  
+Nota: Cargo es una variable de tipo “Cargos” que es enumeración (enum) 
 que ud debería definir con los siguientes elementos: 
 Auxiliar; Administrativo;  Ingeniero; Especialista; Investigador. 
 (investigue el uso de  enum en C# para realizar esto)
@@ -31,7 +31,7 @@ el Adicional será: 146.250+ 150.000= 296.250
 
 namespace Personal;
 
-enum cargos
+enum Cargos
 {
     Auxiliar,
     Administrativo,
@@ -48,9 +48,9 @@ class SisPersonal
     char estadoCivil;
     DateTime fechaIngreso;
     double sueldoBasico;
-    cargos cargo;
+    Cargos cargo;
 
-    public SisPersonal(string nombre, string apellido, DateTime fechaNacimiento, char estadoCivil, DateTime fechaIngreso, double sueldoBasico, cargos cargo)
+    public SisPersonal(string nombre, string apellido, DateTime fechaNacimiento, char estadoCivil, DateTime fechaIngreso, double sueldoBasico, Cargos cargo)
     {
         this.nombre = nombre;
         this.apellido = apellido;
@@ -97,7 +97,7 @@ class SisPersonal
         set => sueldoBasico = value;
     }
 
-    public cargos Cargo
+    public Cargos Cargo
     {
         get => cargo;
         set => cargo = value;
@@ -132,7 +132,7 @@ class SisPersonal
             adicional += sueldoBasico * 0.25;
         }
 
-        if (cargo == cargos.Ingeniero || cargo == cargos.Especialista)
+        if (cargo == Cargos.Ingeniero || cargo == Cargos.Especialista)
         {
             adicional *= 1.5;
         }
